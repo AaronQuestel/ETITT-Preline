@@ -273,3 +273,39 @@ This gives you a pretty good idea on how powerful a Flask, Tailwind CSS and Flow
 ## Flask starter project
 
 This configuration can also be found on the [Flask starter project]() from GitHub where Flask, Tailwind CSS and Flowbite is already configured and you can start building websites right away.
+
+
+## My Notes
+To Install flask:
+python -m pip install Flask
+
+To Install Tailwind: 
+npm install tailwindcss @tailwindcss/cli --save-dev
+
+Add to input.css file:
+@import "tailwindcss";
+
+Run the following command to watch for changes and compile the Tailwind CSS code:
+npx @tailwindcss/cli -i ./static/src/input.css -o ./static/dist/output.css --watch
+
+Reference this output file in html as stylesheet: 
+<link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+
+To get preline working: 
+Install it: 
+npm i preline
+
+Add preline imports in input.css:
+The import that says workspaces is the direct path in node modules!!!
+/* Preline UI */
+@source "./node_modules/preline/dist/*.js";
+@import "/workspaces/tailwind-flask-starter/node_modules/preline/variants.css";
+
+/* Plugins */
+@plugin "@tailwindcss/forms";
+
+Flask cant read node_modules so copy the javascript into the static folder:
+cp node_modules/preline/dist/preline.js static/dist/
+
+Reference this .js in the static folder in the script tags of html files: 
+    <script src="{{ url_for('static', filename='dist/preline.js') }}"></script>

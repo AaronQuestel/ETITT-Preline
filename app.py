@@ -59,5 +59,9 @@ def input_counter():
 def datepicker():
 	return render_template("datepicker.html")
 
+@app.route("/preline")
+def preline():
+	return render_template("preline.html")
+
 if __name__ == '__main__':
 	app.run(debug=True)
