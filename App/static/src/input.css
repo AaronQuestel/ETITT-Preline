@@ -1,0 +1,24 @@
+@import "tailwindcss";
+/* @import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite"; */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Preline UI */
+@source "./node_modules/preline/dist/*.js";
+@import "/workspaces/tailwind-flask-starter/node_modules/preline/variants.css";
+
+/* Plugins */
+@plugin "@tailwindcss/forms";
+
+/* Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Custom Themes */
+@theme{
+    --color-primary:#07294D;
+    --color-secondary: #FDCB25;
+    --color-tertiary: #021D3A;
+
+     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

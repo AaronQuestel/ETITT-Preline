@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
+
+<body class="font-sans antialiased">
     {% block content %}{% endblock %}
-    
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <script src="{{ url_for('static', filename='dist/preline.js') }}"></script>
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
